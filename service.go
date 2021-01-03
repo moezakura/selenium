@@ -195,8 +195,8 @@ func NewSeleniumService(jarPath string, port int, opts ...ServiceOption) (*Servi
 }
 
 // NewChromeDriverService starts a ChromeDriver instance in the background.
-func NewChromeDriverService(path string, port int, opts ...ServiceOption) (*Service, error) {
-	cmd := exec.Command(path, "--port="+strconv.Itoa(port), "--url-base=wd/hub", "--verbose")
+func NewChromeDriverService(path string, port int, args []string, opts ...ServiceOption) (*Service, error) {
+	cmd := exec.Command(path, append(args, "--port="+strconv.Itoa(port), "--url-base=wd/hub", "--verbose")...)
 	s, err := newService(cmd, "/wd/hub", port, opts...)
 	if err != nil {
 		return nil, err
@@ -209,8 +209,8 @@ func NewChromeDriverService(path string, port int, opts ...ServiceOption) (*Serv
 }
 
 // NewGeckoDriverService starts a GeckoDriver instance in the background.
-func NewGeckoDriverService(path string, port int, opts ...ServiceOption) (*Service, error) {
-	cmd := exec.Command(path, "--port", strconv.Itoa(port))
+func NewGeckoDriverService(path string, port int, args []string, opts ...ServiceOption) (*Service, error) {
+	cmd := exec.Command(path, append(args, "--port", strconv.Itoa(port))...)
 	s, err := newService(cmd, "", port, opts...)
 	if err != nil {
 		return nil, err
