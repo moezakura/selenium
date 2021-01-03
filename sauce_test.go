@@ -8,8 +8,8 @@ import (
 
 	"github.com/blang/semver"
 	"github.com/tebeka/selenium"
-	"github.com/tebeka/selenium/internal/seleniumtest"
-	"github.com/tebeka/selenium/sauce"
+	"github.com/moezakura/selenium/internal/seleniumtest"
+	"github.com/moezakura/selenium/sauce"
 )
 
 var (

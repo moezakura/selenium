@@ -25,10 +25,10 @@ import (
 	"github.com/blang/semver"
 	"github.com/google/go-cmp/cmp"
 	"github.com/tebeka/selenium"
-	"github.com/tebeka/selenium/chrome"
-	"github.com/tebeka/selenium/firefox"
-	"github.com/tebeka/selenium/log"
-	"github.com/tebeka/selenium/sauce"
+	"github.com/moezakura/selenium/chrome"
+	"github.com/moezakura/selenium/firefox"
+	"github.com/moezakura/selenium/log"
+	"github.com/moezakura/selenium/sauce"
 )
 
 type Config struct {
